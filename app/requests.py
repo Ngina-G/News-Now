@@ -52,9 +52,10 @@ def process_result(source_list):
 # ARTICLES
 def get_articles(id):
 
-    get_article_details_url = articles_base_url.format(id,api_key)
+    get_article_details_url = articles_base_url.format(id)
+    get_article_detail_url = get_article_details_url.replace(' ','-')
     
-    with urllib.request.urlopen(get_article_details_url) as url:
+    with urllib.request.urlopen(get_article_detail_url) as url:
         get_data = url.read()
         get_article_response = json.loads(get_data)
         
@@ -63,13 +64,11 @@ def get_articles(id):
         
         if get_article_response['articles']:
             article_result_list = get_article_response['articles']
-            article_result = process_results(article_list)
-
-
+            article_result = process_results(article_result_list)
+            print(article_result)
     return article_result
 
 def process_results(article_list):
-    article_result = []
     '''
         Function  that processes the article result and transform them to a list of Objects
         Args:
@@ -77,6 +76,9 @@ def process_results(article_list):
         Returns :
             article_results: A list of article objects
     '''
+    article_result = []
+    article_object = None
+
     for item in article_list:
         author = item.get('author')
         title = item.get('title')

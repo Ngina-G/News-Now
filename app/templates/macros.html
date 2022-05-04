@@ -1,6 +1,5 @@
 <!-- Displaying source list macro  -->
 {% macro displaySourcesList(source_list) %}
-
     {% for source in source_list %}
         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 source-card">
             <li class="text-center">
@@ -10,12 +9,10 @@
         </div>
 
     {% endfor %}
-
 {% endmacro %}
 
 <!-- Displaying articles list macro -->
 {% macro displayArticllesList(article_list) %}
-
     {% for article in article_list %}
         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
             <div class="content-wrapper">
@@ -26,14 +23,8 @@
                 <p>{{article.content}}</p>
                 <a href="{{article.url}}">click to load more</a>
                 <p>{{article.publishedAt}}</p>
-              </div>
-            <!-- <img src="{{ article.urlToImage }}" alt="{{ article.title }} poster" class="img-responsive">
-            <li class="text-center">
-                <a href="/detail/{{article.title}}">
-                    {{ movie.title|truncate(5)}}</a>
-            </li> -->
+            </div>
         </div>
 
     {% endfor %}
-
 {% endmacro %}
