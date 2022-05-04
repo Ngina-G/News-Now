@@ -58,8 +58,8 @@ def get_articles(category):
         
         article_result = None
         
-        if get_article_response['articles']:
-            article_result_list = get_article_response['articles']
+        if get_article_response['results']:
+            article_result_list = get_article_response['results']
             article_result = process_results(article_result_list)
     return article_result
 
