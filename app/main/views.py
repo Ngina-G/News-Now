@@ -22,11 +22,11 @@ def articles():
     articles = get_articles()
     return render_template('articles.html',title=title,articles=articles)
 
-@main.route('/article/<int:id>')
-def article(title):
+@main.route('/detail/<int:id>')
+def detail(title):
     '''
     View article page function that returns the articles
     '''
     title = f'{article.title}'
-    article = get_article(title)
-    return render_template('articles.html',title=title,article=article)
+    detail = get_article(title)
+    return render_template('detail.html',title=title,detail=detail)
