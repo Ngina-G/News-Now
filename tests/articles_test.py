@@ -11,12 +11,14 @@ class ArticleTest(unittest.TestCase()):
         '''
         self.new_article = Article("JohnDoe","TeslaStock","Stock is up","http://","http://","content","date")
 
-    def test_init(self):
-        self.assertEqual(self.new_user.f_name,"John")
-        self.assertEqual(self.new_user.l_name,"Doe")
-        self.assertEqual(self.new_user.u_name,"John Doe")
-        self.assertEqual(self.new_user.email,"pseudo@gmail.com")
-        self.assertEqual(self.new_user.password,"123john")
+    def test_check_initialization(self):
+        self.assertEquals(self.new_article.author, )
+        self.assertEquals(self.new_article.title, )
+        self.assertEquals(self.new_article.description, )
+        self.assertEquals(self.new_article.url, )
+        self.assertEquals(self.new_article.urlToImage, )
+        self.assertEquals(self.new_article.content, )
+        self.assertEquals(self.new_article.publishedAt, )
         
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article,Article))

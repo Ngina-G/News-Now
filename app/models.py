@@ -7,7 +7,7 @@ class Article:
         self.url = url
         self.urlToImage = urlToImage
         self.content = content
-        self.content = publishedAt
+        self.publishedAt = publishedAt
 
 class Source:
     source = []
