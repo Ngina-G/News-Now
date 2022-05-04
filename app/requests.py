@@ -33,12 +33,12 @@ def get_source():
 
     return source_result
         
-def process_result(source_result_list):
+def process_result(source_list):
     '''
     Function that processes sources
     '''
     source_result = []
-    for item in source_result_list:
+    for item in source_list:
         name = item.get('name')
         url = item.get('url')
         
@@ -104,7 +104,8 @@ def process_results(article_list):
         content = item.get('content')
         publishedAt = item.get('publishedAt')
         
-        article_object = Article(author,title,description,url,urlToImage,content,publishedAt)
-        article_result.append(article_object)
+        if urlToImage:
+            article_object = Article(author,title,description,url,urlToImage,content,publishedAt)
+            article_result.append(article_object)
     return article_result
 

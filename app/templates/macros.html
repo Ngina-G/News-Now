@@ -1,0 +1,30 @@
+<!-- Displaying source list macro  -->
+{% macro displaySourcesList(source_list) %}
+
+    {% for source in source_list %}
+        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 source-card">
+            <li class="text-center">
+                <a href="articles.html">
+                    {{ source.name|truncate(10)}}</a>
+            </li>
+        </div>
+
+    {% endfor %}
+
+{% endmacro %}
+
+<!-- Displaying articles list macro -->
+{% macro displayArticllesList(article_list) %}
+
+    {% for article in article_list %}
+        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+            <img src="{{ article.urlToImage }}" alt="{{ article.title }} poster" class="img-responsive">
+            <li class="text-center">
+                <a href="/detail/{{article.title}}">
+                    {{ movie.title|truncate(10)}}</a>
+            </li>
+        </div>
+
+    {% endfor %}
+
+{% endmacro %}
