@@ -14,16 +14,16 @@ def index():
     business_source = get_source('business')
     health_source = get_source('health')
     tech_source = get_source('technology')
+    articles = get_articles(id)
+    return render_template('index.html',title=title,general= general_source,business=business_source,health=health_source,technology=tech_source, articles=articles)
 
-    return render_template('index.html',title=title,general= general_source,business=business_source,health=health_source,technology=tech_source)
-
-@main.route('/articles/<id>')
-def articles(id):
+@main.route('/articles')
+def articles():
     '''
     View article page function that returns the articles
     '''
     title = 'Articles'
-    articles = get_articles(id)
+    articles = get_articles()
     return render_template('articles.html',title=title,articles=articles)
 
 # @main.route('/detail/<int:title>')

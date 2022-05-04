@@ -77,7 +77,6 @@ def process_results(article_list):
             article_results: A list of article objects
     '''
     article_result = []
-    article_object = None
 
     for item in article_list:
         author = item.get('author')
@@ -88,8 +87,8 @@ def process_results(article_list):
         content = item.get('content')
         publishedAt = item.get('publishedAt')
         
-        # if urlToImage:
-        article_object = Article(author,title,description,url,urlToImage,content,publishedAt)
-        article_result.append(article_object)
+        if urlToImage:
+            article_object = Article(author,title,description,url,urlToImage,content,publishedAt)
+            article_result.append(article_object)
     return article_result
 
