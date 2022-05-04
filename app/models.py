@@ -11,7 +11,7 @@ class Article:
 
 class Source:
     
-    def __init__(self,name,id,url):
+    def __init__(self,name,id,sourceUrl):
         self.name = name
         self.id = id
-        self.url = url
+        self.sourceUrl = sourceUrl

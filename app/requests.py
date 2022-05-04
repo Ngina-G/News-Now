@@ -5,11 +5,14 @@ from .models import Article
 # Getting api key
 api_key = None
 
-# Getting the movie base url
+# Getting the source url
 base_url = None
 
+# Getting the articles from a source url
+articles_base_url = None
+
 def configure_request(app):
-    global api_key,base_url
+    global api_key,base_url,articles_base_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
     articles_base_url = app.config['ARTICLES_BASE_URL']
@@ -40,51 +43,30 @@ def process_result(source_list):
     source_result = []
     for item in source_list:
         name = item.get('name')
-        url = item.get('url')
+        sourceUrl = item.get('sourceUrl')
         
-        source_object = Source(name,id,url) 
+        source_object = Source(name,id,sourceUrl) 
         source_result.append(source_object)
     return source_result
 
 # ARTICLES
-def get_articles(category):
-    '''
-    Function that gets the json response to our url request for articles
-    '''
-    get_url = articles_base_url.format(category,api_key)
+def get_articles(id):
+
+    get_article_details_url = articles_base_url.format(id,api_key)
     
-    with urllib.request.urlopen(get_url) as url:
+    with urllib.request.urlopen(get_article_details_url) as url:
         get_data = url.read()
         get_article_response = json.loads(get_data)
         
         article_result = None
         
-        if get_article_response['source']:
-            article_result_list = get_article_response['source']
-            article_result = process_results(article_result_list)
+        
+        if get_article_response['articles']:
+            article_result_list = get_article_response['articles']
+            article_result = process_results(article_list)
+
+
     return article_result
-
-def get_article(id):
-
-    get_article_details_url = articles_base_url.format(id,api_key)
-    
-    with urllib.request.urlopen(get_article_details_url) as url:
-        article_details_data = url.read()
-        article_details_response = json.loads(article_details_data)
-        
-        article_object = None
-        
-        if article_details_response:
-            author = article_details_response.get('author')
-            title = article_details_response.get('title')
-            description = article_details_response.get('description')
-            url = article_details_response.get('url')
-            urlToImage = article_details_response.get('urlToImage')
-            content = article_details_response.get('content')
-            publishedAt = article_details_response.get('publishedAt')
-
-            article_object = Article(author,title,description,url,urlToImage,content,publishedAt)
-    return article_object
 
 def process_results(article_list):
     article_result = []
@@ -104,8 +86,8 @@ def process_results(article_list):
         content = item.get('content')
         publishedAt = item.get('publishedAt')
         
-        if urlToImage:
-            article_object = Article(author,title,description,url,urlToImage,content,publishedAt)
-            article_result.append(article_object)
+        # if urlToImage:
+        article_object = Article(author,title,description,url,urlToImage,content,publishedAt)
+        article_result.append(article_object)
     return article_result
 
