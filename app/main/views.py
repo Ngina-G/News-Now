@@ -10,8 +10,12 @@ def index():
     '''
     title = 'Welcome to NewsNow the best News Website'
     # articles = get_articles('business')
-    sources = get_source()
-    return render_template('index.html',title=title,sources=sources)
+    general_source = get_articles('general')
+    business_source = get_articles('business')
+    health_source = get_articles('health')
+    tech_source = get_articles('technology')
+
+    return render_template('index.html',title=title,general= general_source,business=business_source,health=health_source,technology=tech_source)
 
 @main.route('/articles')
 def articles():
@@ -19,7 +23,7 @@ def articles():
     View article page function that returns the articles
     '''
     title = f'Articles from {source.name}'
-    articles = get_articles()
+    articles = get_articles(category)
     return render_template('articles.html',title=title,articles=articles)
 
 @main.route('/detail/<int:title>')

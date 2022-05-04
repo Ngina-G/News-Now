@@ -18,8 +18,7 @@ def get_source():
     '''
     Function that gets the json response to our url request for sources
     '''
-    get_url = source_base_url.format(api_key)
-    print (get_url)
+    get_url = base_url.format(category,api_key)
     
     with urllib.request.urlopen(get_url) as url:
         get_data = url.read()
@@ -27,9 +26,9 @@ def get_source():
         
         source_result = None
         
-        if get_sources_response['sources']:
-            source_result_list = get_sources_response['sources']
-            source_result = process_results(source_result_list)
+        if get_sources_response['results']:
+            source_result_list = get_sources_response['results']
+            source_result = process_result(source_result_list)
 
     return source_result
         
