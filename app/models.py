@@ -10,7 +10,6 @@ class Article:
         self.publishedAt = publishedAt
 
 class Source:
-    source = []
     
     def __init__(self,name,id):
         self.name = name

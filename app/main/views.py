@@ -10,10 +10,10 @@ def index():
     '''
     title = 'Welcome to NewsNow the best News Website'
     # articles = get_articles('business')
-    general_source = get_articles('general')
-    business_source = get_articles('business')
-    health_source = get_articles('health')
-    tech_source = get_articles('technology')
+    general_source = get_source('general')
+    business_source = get_source('business')
+    health_source = get_source('health')
+    tech_source = get_source('technology')
 
     return render_template('index.html',title=title,general= general_source,business=business_source,health=health_source,technology=tech_source)
 

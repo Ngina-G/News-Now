@@ -14,7 +14,7 @@ def configure_request(app):
     base_url = app.config['NEWS_API_BASE_URL']
 
 # SOURCES
-def get_source():
+def get_source(category):
     '''
     Function that gets the json response to our url request for sources
     '''
@@ -26,8 +26,8 @@ def get_source():
         
         source_result = None
         
-        if get_sources_response['results']:
-            source_result_list = get_sources_response['results']
+        if get_sources_response['sources']:
+            source_result_list = get_sources_response['sources']
             source_result = process_result(source_result_list)
 
     return source_result
@@ -58,8 +58,8 @@ def get_articles(category):
         
         article_result = None
         
-        if get_article_response['results']:
-            article_result_list = get_article_response['results']
+        if get_article_response['source']:
+            article_result_list = get_article_response['source']
             article_result = process_results(article_result_list)
     return article_result
 
