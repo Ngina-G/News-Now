@@ -1,8 +1,8 @@
 <!-- Displaying source list macro  -->
 {% macro displaySourcesList(source_list) %}
     {% for source in source_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 source-card">
-            <li class="text-center">
+        <div class="source-card">
+            <li class="">
                 <a href={{source.sourceUrl}}>{{ source.name|truncate(25)}}</a>
             </li>
         </div>
@@ -17,13 +17,14 @@
             <div class="content-wrapper article">
                 <h3>{{article.title|truncate(100)}}</h3>
                 <h5>{{article.author}}</h5>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{article.urlToImage}}) no-repeat center center"></div>
+                <div class="posterPath" style="background: url({{article.urlToImage}}) no-repeat center center"></div>
                 <p>{{article.description}}</p>
                 <p>{{article.content}}</p>
                 <a href="{{article.url}}">click to load more</a>
                 <p>{{article.publishedAt}}</p>
             </div>
         </div>
+        <!-- <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 source-card"> -->
 
     {% endfor %}
 {% endmacro %}

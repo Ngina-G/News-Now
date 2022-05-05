@@ -1,7 +1,16 @@
 .navbar{
-    background-color: brown;
+    background-color: #39393A;
 }
 .source-card{
-    text-decoration: double;
     list-style: none;
+    background-color: #63B0CD;
+}
+.articles{
+    background-color: #E8E8E8;
+}
+hr{
+    border: 1px solid #F3DE8A;
+}
+li{
+    list-style-type: none;
 }

@@ -8,59 +8,56 @@
 
 <!-- Content block -->
 {% block content %}
-<section id="articles">
-    <h2>Articles</h2>
-    </div>
+<div class="container" id="articles">
+    <div class="row justify-content-md-center">
+        </div class="col">
+            <h2 style="font-family: 'Times New Roman', Times, serif;">NewsNow</h2>
+        </div>
+        <hr> <hr>
+    </div>    
 
-        <span class="line"></span>
-        <span class="line"></span>
-
-    <div class="news-wrapper">
-        <div class="row">
+    <div class="row news-wrapper">
+        <div class="col ">
+            <h3> General</h3>
+            <ul>
+                {{ macro.displaySourcesList(general)}}
+            </ul>
+        </div>
+        <div class="col-md-auto">
+            <h2 class="text-center">Articles</h2>
             <ul>{{ macro.displayArticllesList(articles) }}</ul>
         </div>
     </div>
-</section>
-<div class="container">
 
-    <!-- General -->
-    <div class="row">
-        <h3> General</h3>
-        <ul>
-            {{ macro.displaySourcesList(general)}}
-        </ul>
+    <div class="row align-items-end">
+        <!-- Business news  -->
+        <div class="row">
+
+            <h3> Business </h3>
+            <ul>
+                {{ macro.displaySourcesList(business)}}
+            </ul>
+        </div>
+
+        <!-- Health News -->
+        <div class="row">
+
+            <h3>Health</h3>
+            <ul>
+                {{ macro.displaySourcesList(health)}}
+            </ul>
+        </div>
+
+        <!-- Technology news -->
+        <div class="row">
+
+            <h3>Technology</h3>
+            <ul>
+                {{ macro.displaySourcesList(technology)}}
+            </ul>
+        </div>
     </div>
-
-    <!-- Business news  -->
-    <div class="row">
-
-        <h3> Business </h3>
-        <ul>
-            {{ macro.displaySourcesList(business)}}
-        </ul>
-    </div>
-
-    <!-- Health News -->
-    <div class="row">
-
-        <h3>Health</h3>
-        <ul>
-            {{ macro.displaySourcesList(health)}}
-        </ul>
-    </div>
-
-    <!-- Technology news -->
-    <div class="row">
-
-        <h3>Technology</h3>
-        <ul>
-            {{ macro.displaySourcesList(technology)}}
-        </ul>
-    </div>
-
-
 </div>
-
 
 
 {% endblock%}
