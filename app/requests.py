@@ -43,19 +43,18 @@ def process_result(source_list):
     source_result = []
     for item in source_list:
         name = item.get('name')
-        sourceUrl = item.get('sourceUrl')
+        sourceUrl = item.get('url')
         
         source_object = Source(name,id,sourceUrl) 
         source_result.append(source_object)
     return source_result
 
 # ARTICLES
-def get_articles(id):
+def get_articles():
 
-    get_article_details_url = articles_base_url.format(id)
-    get_article_detail_url = get_article_details_url.replace(' ','-')
+    get_article_details_url = articles_base_url.format(api_key)
     
-    with urllib.request.urlopen(get_article_detail_url) as url:
+    with urllib.request.urlopen(get_article_details_url) as url:
         get_data = url.read()
         get_article_response = json.loads(get_data)
         

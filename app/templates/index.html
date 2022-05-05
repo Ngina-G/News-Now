@@ -8,18 +8,19 @@
 
 <!-- Content block -->
 {% block content %}
-<h2>Articles</h2>
-</div>
-
-<span class="line"></span>
-<span class="line"></span>
-
-<div class="news-wrapper">
-    <div class="row">
-        <ul>{{ macro.displayArticllesList(articles) }}</ul>
+<section id="articles">
+    <h2>Articles</h2>
     </div>
-</div>
 
+        <span class="line"></span>
+        <span class="line"></span>
+
+    <div class="news-wrapper">
+        <div class="row">
+            <ul>{{ macro.displayArticllesList(articles) }}</ul>
+        </div>
+    </div>
+</section>
 <div class="container">
 
     <!-- General -->

@@ -14,7 +14,7 @@ def index():
     business_source = get_source('business')
     health_source = get_source('health')
     tech_source = get_source('technology')
-    articles = get_articles(id)
+    articles = get_articles()
     return render_template('index.html',title=title,general= general_source,business=business_source,health=health_source,technology=tech_source, articles=articles)
 
 @main.route('/articles')
