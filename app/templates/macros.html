@@ -1,7 +1,7 @@
 <!-- Displaying source list macro  -->
 {% macro displaySourcesList(source_list) %}
     {% for source in source_list %}
-        <div class="source-card">
+        <div class="source-card text-light">
             <li class="">
                 <a href={{source.sourceUrl}}>{{ source.name|truncate(25)}}</a>
             </li>
