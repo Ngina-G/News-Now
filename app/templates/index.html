@@ -9,17 +9,17 @@
 
 <!-- Content block -->
 {% block content %}
-<div class="container" id="articles">
-    <div class="row justify-content-md-center" style="background-color: #1d1d1c;" >
+<article style="background-color: #1d1d1c;">
+<div class="container" id="articles" >
+    <div class="row justify-content-md-center">
         </div class="col title" >
             <h1 style="font-family: 'Diplomata SC', cursive; text-align: center; font-size: 5.1em; color: #a1d84e; background-color: #1d1d1c;">NewsNow</h1>
         </div>
         <hr>
-    </div>    
 
-    <section id="bdd">
+    <section id="bdd" style="background-color: #E8E8E8;">
         <div class="row">
-            <div class="col-lg-2 general">
+            <div class="col-lg-2 general" style="color: #fff; background-color: #1d1d1c;">
                 <h3 style="text-align: center;"> General</h3>
                 <ul>
                     {{ macro.displaySourcesList(general)}}
@@ -49,6 +49,5 @@
         </div>
     </section>
 </div>
-
-
+</article>
 {% endblock%}
