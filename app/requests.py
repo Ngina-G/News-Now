@@ -43,6 +43,7 @@ def process_result(source_list):
     source_result = []
     for item in source_list:
         name = item.get('name')
+        id = item.get('id')
         sourceUrl = item.get('url')
         
         source_object = Source(name,id,sourceUrl) 
