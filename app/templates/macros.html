@@ -3,7 +3,7 @@
     {% for source in source_list %}
         <div class="source-card text-light">
             <li class="">
-                <a href={{source.sourceUrl}}>{{ source.name|truncate(25)}}</a>
+                <a style="color: #fff;" href={{source.sourceUrl}}>{{ source.name|truncate(25)}}</a>
             </li>
         </div>
 
@@ -13,8 +13,8 @@
 <!-- Displaying articles list macro -->
 {% macro displayArticllesList(article_list) %}
     {% for article in article_list %}
-        <div class="articles">
-            <div class="content-wrapper col-lg-3 mx-auto" style="width: 300px;">
+        <div class="d-flex">
+            <div class="content col-lg-2 mx-auto justify-content-center" style="width: 340px; border: 1px solid #39393A; margin-left: 5%; margin-top: 1%; margin-bottom: 3%; margin-right: 3%;">
                 <img class="img-thumbnail" src="{{article.urlToImage}}" alt="image">
                 <h3>{{article.title|truncate(50)}}</h3>
                 <h5>{{article.author}}</h5>

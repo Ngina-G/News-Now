@@ -1,8 +1,11 @@
+body{
+    background-color: #1d1d1c;
+}
 #bdd{
     background-color: #E8E8E8;
 }
 hr{
-    border: 1px solid #F3DE8A;
+    border: 1px solid #a1d84e;
 }
 li{
     list-style-type: none;
@@ -19,15 +22,15 @@ h1{
     font-family: 'DM Serif Text', serif;
 }
 .navbar{
-    background-color: #39393A;
+    background-color: #1d1d1c;
 }
 .source-card{
     list-style: none;
 }
-.general{
-    background-color: #63B0CD;
-    color: #FFFFFF;
-}
+
 .title{
     background-color: #FFFFFF;
+}
+#sources{
+    color:#39393A
 }

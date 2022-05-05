@@ -10,63 +10,44 @@
 <!-- Content block -->
 {% block content %}
 <div class="container" id="articles">
-    <div class="row justify-content-md-center " >
+    <div class="row justify-content-md-center" style="background-color: #1d1d1c;" >
         </div class="col title" >
-            <h1 style="font-family: 'Diplomata SC', cursive; text-align: center; font-size: 5.1em;">NewsNow</h1>
+            <h1 style="font-family: 'Diplomata SC', cursive; text-align: center; font-size: 5.1em; color: #a1d84e; background-color: #1d1d1c;">NewsNow</h1>
         </div>
         <hr>
     </div>    
 
-<section id="bdd">
-    <div class="row">
-        <div class="col-lg-2 general">
-            <h3> General</h3>
-            <ul>
-                {{ macro.displaySourcesList(general)}}
-            </ul>
-            <br>
-            <h3> Business </h3>
-            <ul>
-                {{ macro.displaySourcesList(business)}}
-            </ul>
-            <br>
-            <h3>Health</h3>
-            <ul>
-                {{ macro.displaySourcesList(health)}}
-            </ul>
-            <br>
-            <h3>Technology</h3>
-            <ul>
-                {{ macro.displaySourcesList(technology)}}
-            </ul>
-        </div>
-        <div class="d-flex">
-            <div class="col-md-auto justify-content-center">
-                <h2 class="text-center">Articles</h2>
-                <ul>{{ macro.displayArticllesList(articles) }}</ul>
+    <section id="bdd">
+        <div class="row">
+            <div class="col-lg-2 general">
+                <h3 style="text-align: center;"> General</h3>
+                <ul>
+                    {{ macro.displaySourcesList(general)}}
+                </ul>
+                <br>
+                <h3 style="text-align: center;"> Business </h3>
+                <ul>
+                    {{ macro.displaySourcesList(business)}}
+                </ul>
+                <br>
+                <h3 style="text-align: center;">Health</h3>
+                <ul>
+                    {{ macro.displaySourcesList(health)}}
+                </ul>
+                <br>
+                <h3 style="text-align: center;">Technology</h3>
+                <ul>
+                    {{ macro.displaySourcesList(technology)}}
+                </ul>
+            </div>
+            <div class="d-flex text-center">
+                <div class="col-md-auto justify-content-center">
+                    <h2>Articles</h2>
+                    <ul>{{ macro.displayArticllesList(articles) }}</ul>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-    <div class="row align-items-end">
-        <!-- Business news  -->
-        <div class="row">
-
-
-        </div>
-
-        <!-- Health News -->
-        <div class="row">
-
-
-        </div>
-
-        <!-- Technology news -->
-        <div class="row">
-
-
-        </div>
-    </div>
+    </section>
 </div>
 
 
