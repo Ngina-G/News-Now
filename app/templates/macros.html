@@ -13,8 +13,8 @@
 <!-- Displaying articles list macro -->
 {% macro displayArticllesList(article_list) %}
     {% for article in article_list %}
-        <div class="row articles">
-            <div class="content-wrapper col-xs-12 col-sm-3 col-md-2 col-lg-3 article">
+        <div class="articles">
+            <div class="content-wrapper col-lg-3 mx-auto" style="width: 300px;">
                 <img class="img-thumbnail" src="{{article.urlToImage}}" alt="image">
                 <h3>{{article.title|truncate(50)}}</h3>
                 <h5>{{article.author}}</h5>

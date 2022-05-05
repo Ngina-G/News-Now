@@ -1,4 +1,4 @@
-body{
+#bdd{
     background-color: #E8E8E8;
 }
 hr{
@@ -9,6 +9,14 @@ li{
 }
 ul{
     list-style-type: none;
+    font-family: 'Noticia Text', serif;
+}
+h3{
+    font-family: 'DM Serif Text', serif;
+    font-size: 2em;
+}
+h1{
+    font-family: 'DM Serif Text', serif;
 }
 .navbar{
     background-color: #39393A;
@@ -18,4 +26,8 @@ ul{
 }
 .general{
     background-color: #63B0CD;
+    color: #FFFFFF;
+}
+.title{
+    background-color: #FFFFFF;
 }
