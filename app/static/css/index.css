@@ -1,11 +1,4 @@
-.navbar{
-    background-color: #39393A;
-}
-.source-card{
-    list-style: none;
-    background-color: #63B0CD;
-}
-.articles{
+body{
     background-color: #E8E8E8;
 }
 hr{
@@ -13,4 +6,16 @@ hr{
 }
 li{
     list-style-type: none;
+}
+ul{
+    list-style-type: none;
+}
+.navbar{
+    background-color: #39393A;
+}
+.source-card{
+    list-style: none;
+}
+.general{
+    background-color: #63B0CD;
 }

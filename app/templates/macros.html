@@ -13,14 +13,14 @@
 <!-- Displaying articles list macro -->
 {% macro displayArticllesList(article_list) %}
     {% for article in article_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 articles">
-            <div class="content-wrapper article">
-                <h3>{{article.title|truncate(100)}}</h3>
+        <div class="row articles">
+            <div class="content-wrapper col-xs-12 col-sm-3 col-md-2 col-lg-3 article">
+                <img class="img-thumbnail" src="{{article.urlToImage}}" alt="image">
+                <h3>{{article.title|truncate(50)}}</h3>
                 <h5>{{article.author}}</h5>
-                <div class="posterPath" style="background: url({{article.urlToImage}}) no-repeat center center"></div>
                 <p>{{article.description}}</p>
                 <p>{{article.content}}</p>
-                <a href="{{article.url}}">click to load more</a>
+                <a href="{{article.url}}" style="font-weight: 500;" >More>> </a>
                 <p>{{article.publishedAt}}</p>
             </div>
         </div>
